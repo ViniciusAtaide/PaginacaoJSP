@@ -45,11 +45,17 @@
 		</c:forEach>		
 	</table>
 	
-	<c:if test="${pagina != 1 }">
-		<a href="usu.do?pagina=${pagina-1 }">Anterior</a>
-	</c:if>
+
 	<table border="1" class="pags" width="50%">
 		<tr>
+			<c:choose>	
+				<c:when test="${pagina != 1 }">
+					<td><a href="usu.do?pagina=${pagina-1 }">Anterior</a></td>
+				</c:when>
+				<c:otherwise>
+					<td>Anterior</td>
+				</c:otherwise>
+			</c:choose>
 			
 			<c:forEach begin="1" end="${requestScope.numpaginas }" var="i">
 				<c:choose>
@@ -61,11 +67,15 @@
 					</c:otherwise>		
 				</c:choose>
 			</c:forEach>
-		
-		</tr>
-				<c:if test="${pagina lt numpaginas }">
-				<a href="usu.do?pagina=${pagina+1 }">Próxima</a>
-			</c:if>		
+			<c:choose>
+				<c:when test="${pagina lt numpaginas  }">
+					<td><a href="usu.do?pagina=${pagina+1 }">Próxima</a> </td>
+				</c:when>
+				<c:otherwise>
+					<td>Próxima</td>
+				</c:otherwise>
+			</c:choose>
+		</tr>	
 	</table>
 </body>
 </html>
