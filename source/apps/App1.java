@@ -28,6 +28,5 @@ public class App1 {
 		udao.persist(new Usuario("etc"));
 		udao.commit();
 		udao.close();
-		System.out.println("pronto");
 	}
 }

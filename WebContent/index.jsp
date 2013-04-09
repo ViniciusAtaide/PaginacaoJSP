@@ -50,7 +50,7 @@
 		<tr>
 			<c:choose>	
 				<c:when test="${pagina != 1 }">
-					<td><a href="usu.do?pagina=${pagina-1 }">Anterior</a></td>
+					<td><a href="usu.do?pagina=${pagina-1 }&quant=${quant}">Anterior</a></td>
 				</c:when>
 				<c:otherwise>
 					<td>Anterior</td>
@@ -63,13 +63,13 @@
 						<td>${i }</td>
 					</c:when>			
 					<c:otherwise>
-						<td><a href="usu.do?pagina=${i }">${i }</a></td>
+						<td><a href="usu.do?pagina=${i }&quant=${quant}">${i }</a></td>
 					</c:otherwise>		
 				</c:choose>
 			</c:forEach>
 			<c:choose>
 				<c:when test="${pagina lt numpaginas  }">
-					<td><a href="usu.do?pagina=${pagina+1 }">Próxima</a> </td>
+					<td><a href="usu.do?pagina=${pagina+1 }&quant=${quant}">Próxima</a> </td>
 				</c:when>
 				<c:otherwise>
 					<td>Próxima</td>
